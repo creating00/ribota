@@ -2,17 +2,23 @@ package com.creating.ribota.modelo;
 
 import jakarta.persistence.*;
 
-import java.io.Serializable;
-
 @Entity
-@Table(name="Usuario")
-public class Usuario implements Serializable {
+@Table(name = "Cliente")
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
     private String apellido;
-    private String email;
+    private int edad;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -30,20 +36,11 @@ public class Usuario implements Serializable {
         this.apellido = apellido;
     }
 
-    public Long getId() {
-        return id;
+    public int getEdad() {
+        return edad;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    private static final long serialVersionUID = 1L;
 }
